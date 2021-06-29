@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 import matter from 'gray-matter';
 import marked from 'marked';
 
@@ -20,11 +21,11 @@ const DetailBlog = ({
           <h1 className="text-5xl mb-7">{title}</h1>
           <CategoryLabel>{category}</CategoryLabel>
         </div>
-        <img src={cover_image} alt="" className="w-full rounded" />
+        <Image src={cover_image} alt="" className="w-full rounded" />
 
         <div className="flex items-center justify-between p-2 my-8 bg-gray-100">
           <div className="flex items-center">
-            <img
+            <Image
               src={author_image}
               alt=""
               className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
