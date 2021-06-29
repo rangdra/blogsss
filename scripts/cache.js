@@ -7,6 +7,7 @@ function postData() {
 
   const posts = files.map((filename) => {
     const slug = filename.replace('.md', '');
+
     const markdownWithMeta = fs.readFileSync(
       path.join('posts', filename),
       'utf-8'
@@ -15,12 +16,12 @@ function postData() {
     const { data: frontmatter } = matter(markdownWithMeta);
 
     return {
-      frontmatter,
       slug,
+      frontmatter,
     };
   });
 
-  return `export const post = ${JSON.stringify(posts)}`;
+  return `export const posts = ${JSON.stringify(posts)}`;
 }
 
 try {
@@ -30,7 +31,6 @@ try {
 }
 
 fs.writeFile('cache/data.js', postData(), function (err) {
-  if (err) console.log(err);
-
-  console.log('Posts cached');
+  if (err) return console.log(err);
+  console.log('Posts Cached...');
 });
