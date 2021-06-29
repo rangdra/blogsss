@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn cache-posts && git add cache/data.js
+yarn run cache-posts && git add cache/data.js
