@@ -14,7 +14,7 @@ const Home = ({ posts }) => {
         ))}
       </div>
       <Link href="/blog">
-        <a className="block w-full py-4 my-5 text-center text-gray-800 transition duration-500 border border-gray-500 rounded-md ease hover:bg-gray-900 focus:outline-none focus:shadow-outline">
+        <a className="block w-full py-4 my-5 text-center text-gray-800 transition duration-500 border border-gray-500 rounded-md hover:text-gray-50 ease hover:bg-gray-900 focus:outline-none focus:shadow-outline">
           All Posts
         </a>
       </Link>
